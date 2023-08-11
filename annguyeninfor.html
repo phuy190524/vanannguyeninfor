@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="images/avt.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyễn Văn An</title>
+  <meta name="description" content="Card Visit - Business Card - Danh Thiếp Cá Nhân" />
+  <meta name="keywords" content="Card Visit, Business Card, Danh Thiếp Cá Nhân" />
+  <!---STUFF FOR <HEAD>--->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' rel='stylesheet' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+</head>
+<style>
+    @media all and (min-width: 0px) {
+  .page,
+  .sidebar-container,
+  .dim-overlay {
+    display: none !important;
+  }
+  /*========================= 0 =========================*/
+  body {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font: 14px Roboto, sans-serif;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/wallpaperflare.com_wallpaper.jpg);
+    background-color: black;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  b,
+  button,
+  ul,
+  li,
+  i,
+  p,
+  b,
+  strong {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-weight: 300;
+    border: none;
+    background: transparent;
+  }
+
+  :focus {
+    outline: none;
+  }
+  #cv-profile-sex:focus {
+    border-bottom: none;
+    border-radius: 0;
+    padding: 0;
+    line-height: 20px;
+  }
+  /*========================= 1 =========================*/
+
+  .video-bg {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page888 {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    transition: all ease-in-out 0.3s;
+  }
+  /*======================= 1.0 =========================*/
+  .container {
+    width: 90%;
+    min-width: 330px;
+    max-width: 480px;
+    height: auto;
+    margin: 60px 0 0;
+    transition: all ease-in-out 0.3s;
+  }
+  .container.show {
+    margin: 0;
+  }
+  .khung123c {
+    float: left;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    background-color: rgb(1 120 233 / 30%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border: 0px solid #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    z-index: 8;
+  }
+  /*================= 1.1 name ==========================*/
+  /*================= 1.1.1.0 avatar ====================*/
+  .avatar {
+    transition: all ease 0.3s;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    font-size: 0;
+    padding: 0;
+    margin: 0 auto;
+    position: absolute;
+    top: -60px;
+    left: calc(50% - 60px);
+    transform: rotate(360deg);
+  }
+  #bg-avatar.bg-avatar {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 200px;
+    height: 100px;
+    background-color: rgb(1 120 255 / 90%);
+    transition: all ease 30s;
+    margin: 0px;
+    font-size: 0px;
+    transform-origin: 100% 100%;
+    transform: rotateX(180deg);
+    z-index: -999;
+    display: none;
+  }
+  #bg-avatar.bg-avatar.show {
+    transition: all ease 30s;
+    top: calc(100% - 200px);
+    left: calc(50% - 100px)
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .avatar.show {
+    top: 10px;
+    left: 10px;
+    width: 68px;
+    height: 68px;
+    transform: rotate(0deg);
+  }
+  /*================= 1.1.1.1 ibox nametext =============*/
+  .nametext {
+    width: calc(100%);
+    margin: 50px 0 0;
+    transition: all ease 0.3s;
+  }
+  .nametext.show {
+    width: calc(100% - 78px);
+    margin: 0 0 0 78px;
+  }
+  .nametext h2 {
+    white-space: nowrap;
+    position: relative;
+    height: 78px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.3s;
+  }
+  .nametext h2:after {
+    position: absolute;
+    content: "";
+    background-color: rgb(0 0 0);
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+  }
+  h2 .nametextin {
+    font-size: 1em;
+    letter-spacing: 0.15em;
+    word-spacing: -0.3em;
+    line-height: 3em;
+    font-weight: 600;
+    background: linear-gradient(
+      120deg,
+      #000 25%,
+      #555 35%,
+      #ccc 45%,
+      #fff 50%,
+      #ccc 55%,
+      #555 65%,
+      #000 75%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all ease 0.3s;
+    -webkit-animation: 20s BeProud linear infinite;
+    animation: 20s BeProud linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation-delay: 3s;
+  }
+
+  @keyframes BeProud {
+    100% {
+      background-position: 100vw 0px;
+    }
+  }
+  .nametext.show h2 .nametextin {
+    font-size: 0.8em;
+  }
+  h2 .nametextin#cv-profile-sex:focus {
+    line-height: 1em;
+    border: none;
+  }
+  /*================= 1.1.2 my job ======================*/
+  .myjob {
+    width: cal(100% - 78px);
+    margin: 0 0 10px;
+  }
+  .myjob h3 {
+    font-size: 1em;
+    text-align: right;
+    letter-spacing: 0.3em;
+    word-spacing: 0.3em;
+    font-style: italic;
+  }
+  .myjob h3 span {
+    padding: 5px 0;
+    display: inline-block;
+    position: relative;
+  }
+  .myjob h3 span#cv-profile-sex:focus {
+    padding: 5px 0;
+    display: inline-block;
+    line-height: 14px;
+  }
+  .myjob h3 span:after {
+    content: "";
+    background-color: rgb(136, 233, 1);
+    width: 100%;
+    height: 3px;
+    top: -3px;
+    right: 0;
+    position: absolute;
+    border-radius: 3px;
+    -webkit-animation: 1s animatemyself ease;
+    animation: 5s animatemyself ease;
+    -webkitanimation-delay: 0;
+    animation-delay: 1.2s;
+  }
+  @keyframes animatemyself {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  /*================== trich dan hay ====================*/
+  .myself {
+    opacity: 1;
+    transition: all ease-in-out 0.3s;
+    transform: scaleY(1);
+  }
+  .myself.show {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  .myself h5 p {
+    color: #ddd;
+    line-height: 23px;
+    word-spacing: 2px;
+    letter-spacing: 1.2px;
+  }
+  .myself h5 p#cv-profile-sex:focus {
+    line-height: 23px;
+  }
+  .myself h5 p strong {
+    padding: 0 3px 0 0;
+    font-weight: 600;
+  }
+  .myself h5 p b {
+    padding: 2px;
+    font-weight: 600;
+  }
+  /*================== 1.2 xem them =====================*/
+  #custom-btn {
+    background-color: transparent;
+    width: 28px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 999;
+  }
+  #custom-btn button {
+    position: relative;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    width: 5px;
+    height: 5px;
+    font-size: 0;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+    opacity: 1;
+  }
+  #custom-btn button:after {
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+  }
+  #custom-btn button:before {
+    content: "";
+    background-color: #fff;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transition: all ease 0.3s;
+  }
+  #custom-btn.show button {
+
+    width: 0;
+    height: 0;
+  }
+  #custom-btn.show button:after {
+    background-color: #fff;
+    top: 0px;
+    left: -15.5px;
+    width: 28px;
+    height: 3px;
+    border-radius: 1.5px;
+    transform: rotate(45deg);
+  }
+  #custom-btn.show button:before {
+    background-color: #fff;
+    top: 0px;
+    left: -15.5px;
+    width: 28px;
+    height: 3px;
+    border-radius: 1.5px;
+    transform: rotate(-45deg);
+  }
+  .ic03 {
+    margin: 0 0 10px;
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+    transform: scaleY(0);
+    overflow: hidden;
+  }
+  .ic03.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .ic03 .ic {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 5px;
+  }
+  .ic03 .ic:nth-child(4) {
+    margin: 0;
+  }
+  .ic03 i {
+    color: #fff;
+    padding: 0;
+    width: 26px;
+    height: 26px;
+    margin: 0 5px 0 0;
+    font-size: 12px;
+    background: #333;
+    text-align: center;
+    line-height: 28px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  /*==================== 1.2A.1 Chia sẻ =================*/
+  /*.shere {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    height: 40px;
+  }
+  .shere a {
+    color: #fff;
+    font-size: 0px;
+  }
+  .shere i {
+    transition: all 0.23s ease;
+    color: #fff;
+    font-size: 16px;
+    padding: 0;
+    margin: 0 5px 0 0;
+    border: 1px solid #fff;
+    background: rgb(0 0 0 / 20%);
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+  .shere i:hover {
+    background: rgb(5 100 145);
+    padding: 5px;
+  }*/
+  /*================== button atm and social ============*/
+  #solatm {
+    position: relative;
+  }
+  .button-btn2 {
+    width: 100%;
+    height: 0px;
+    margin: 0;
+    background-color: rgba( 225, 225, 225, 0.5);
+    border-radius: 100px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease-in-out 0.3s;
+    overflow: hidden;
+  }
+  .button-btn2.show {
+    transition-delay: 0.3s;
+    margin: 0 0 10px;
+    height: 38px;
+  }
+  .button-btn2 button {
+    width: calc(50%);
+    height: 38px;
+    cursor: pointer;
+  }
+  .button-btn2 button:nth-child(2) {
+    border-left: 1px solid #666;
+  }
+
+  /*================== social ===========================*/
+  .social {
+    position: relative;
+    width: 100%;
+    height: 0px;
+    background: transparent;
+  }
+  .social ul li {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: -20px;
+    left: calc(25% - 25px);
+    transition: all ease 0.3s;
+    font-size: 0px;
+    opacity: 0;
+    transform: scale(0);
+  }
+  .social ul li:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 5px;
+    top: 54px;
+    left: 5px;
+    background: rgb(0 0 0 / 70%);
+    box-shadow: 0 0 3px rgb(0 0 0 / 70%);
+    border-radius: 50%;
+  }
+  .social ul li.show {
+    opacity: 1;
+    bottom: -20px;
+    transform: scale(1);
+  }
+  .social ul li.show:nth-child(1) {
+    bottom: 20px;
+    left: 5px;
+  }
+  .social ul li.show:nth-child(2) {
+    bottom: 35px;
+    left: calc(25% - 11.25px);
+    transition-delay: 0.2s;
+  }
+  .social ul li.show:nth-child(3) {
+    bottom: 40px;
+    left: calc(50% - 25px);
+    transition-delay: 0.4s;
+  }
+  .social ul li.show:nth-child(4) {
+    bottom: 35px;
+    left: calc(75% - 38.75px);
+    transition-delay: 0.6s;
+  }
+  .social ul li.show:nth-child(5) {
+    bottom: 20px;
+    left: calc(100% - 55px);
+    transition-delay: 0.8s;
+  }
+  .social ul li a:hover{
+    transform: translateY(-10px);
+  }
+  .social ul li a {
+    transition: all 0.5s ease;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    background-color: rgb(0 0 0 / 0.3);
+    text-decoration: none;
+    color: white;
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    border: 1px solid white;
+    box-sizing: border-box;
+  }
+  .social ul li a i {
+    font-size: 22px;
+  }
+  .social ul li a i img {
+    width: 26px;
+    height: 26px;
+    margin: 5px 0 0;
+  }
+  /*================== atm ==============================*/
+  .atm-card {
+    width: 100%;
+    height: 0px;
+    background: transparent;
+    position: absolute;
+    bottom: 38px;
+    left: 0;
+    overflow-x: auto;
+    padding: 0 10px;
+    margin: 0 0 0 -10px;
+    overflow-y: hidden;
+    background-color: rgb(0 0 0 / 60%);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    transition: all ease-in-out 0.3s;
+
+  }
+  .atm-card.show {
+    height: 200px;
+  }
+  #atm-card::-webkit-scrollbar-track,
+  #atm-card::-webkit-scrollbar-thumb,
+  #atm-card::-webkit-scrollbar-button {
+    display: none;
+
+  }
+  .atm-card ul {
+    width: calc(290px * 2 + 10px);
+    height: 180px;
+    padding: 10px 0;
+    transition: all ease-in-out 0.3s;
+  }
+ 
+  .atm-card ul li:nth-child(1) {
+    margin: 0 10px 0 0;
+  }
+  /*================== vietcombank atm =================*/
+  .atm-card ul li.vietcombank-card:after {
+    content: "";
+    background: #333 url(https://tse1.mm.bing.net/th?id=OIP.Dks_dhb9U7aR_x_Tk6F-0gAAAA&pid=Api&P=0&h=180) no-repeat;
+    background-position: 50% 52%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -9;
+  }
+  .vietcombank-card ol:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  .vietcombank-card ol:nth-child(1) img {
+    height: auto;
+    width: 48px;
+  }
+  .vietcombank-card ol:nth-child(1) big {
+    width: calc(100% - 50px);
+    text-align: left;
+    font-size: 23px;
+    color: white;
+    padding-left: 10px;
+    letter-spacing: 2px;
+  }
+  .vietcombank-card ol:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .vietcombank-card ol:nth-child(2) span {
+    width: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  .vietcombank-card ol:nth-child(2) span small {
+    color: #ddd;
+    text-transform: uppercase;
+    margin-top: 3px;
+  }
+  .vietcombank-card ol:nth-child(2) img {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+  }
+  
+  /*================== tai dau trang ====================*/
+  #loadingDiv {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999999;
+  }
+  .loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    margin: -50px 0 0 -50px;
+    border: 10px solid transparent;
+    border-radius: 50%;
+    border-top: 10px solid #273650;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 1s linear infinite;
+    background: transparent;
+  }
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(660deg);
+    }
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(660deg);
+    }
+  }
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s;
+  }
+  @-webkit-keyframes animatebottom {
+    from {
+      bottom: -100px;
+      opacity: 0;
+    }
+    to {
+      bottom: 0px;
+      opacity: 1;
+    }
+  }
+  @keyframes animatebottom {
+    from {
+      bottom: -100px;
+      opacity: 0;
+    }
+    to {
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+}
+@media all and (min-width: 769px) {
+}
+
+</style>
+<body>
+  <div class='page888'>
+    <div class="video-bg">
+      <video width="320" height="240" autoplay loop muted>
+        <source src="https://i.imgur.com/V1CAo5G.amp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="container">
+      <div class='khung123c' id='khung123'>
+        <div class="bg-avatar" id='bg-avatar'> back ground avatar div</div>
+        <div class='name' id='name'>
+          <div class='avatar'><img src="images/avt.jpg"> </img>avatar</div>
+          <div class='ibox'>
+            <div class='nametext'>
+              <h2><span class='nametextin' contenteditable='true' id='cv-profile-sex' placeholder='Name' type='text'>꧁༺Nguyễn Văn An༻꧂</span></h2>
+              <div class='myjob'>
+                <h3><span contenteditable='true' id='cv-profile-sex' placeholder='myjob' type='text'>Website Design/Front-End</span></h3>
+              </div>
+            </div>
+            <div id="custom-btn"><button class="custom-btn" title="nhan vao day de hien thi chi tiet"><span>Click!</span></button></div>
+            <div id="myself" class='myself'>
+              <h5>
+                <p style="text-align: center;" contenteditable='true' id='cv-profile-sex' placeholder='Giới thiệu bản thân' type='text'><strong>CV:</strong><b>"</b>Nhận Code Website Giá Rẻ<b>"</b></p>
+              </h5>
+            </div>
+          </div>
+        </div>
+        <!--Khóa name-->
+        <div id='prof'>
+          <div class='ic03'>
+            <div class='ic'>
+              <div class='icf icf1'><i class='fa-regular fa-calendar'></i></div>
+              <div class='icoweb'>
+                <span contenteditable='true' cvo-placeholder='Ngay sinh' id='cv-profile-sex'>Age:19
+                </span>
+              </div>
+            </div>
+            <!--Khóa ic 0-->
+            <div class='ic'>
+              <div class='icf icf2'><i class='fa-solid fa-transgender'></i>
+              </div>
+              <div class='icoweb'>
+                <span contenteditable='true' cvo-placeholder='Giới tính' id='cv-profile-sex'>Sex:Nam
+                </span>
+              </div>
+            </div>
+            <!--Khóa ic 1-->
+            <div class='ic'>
+              <div class='icf icf1'><i class="fa fa-phone" aria-hidden="true"></i></div>
+              <div class='icoweb'>
+                <span contenteditable='true' cvo-placeholder='phone number' id='cv-profile-sex'>Phone:082 8721 665
+                </span>
+              </div>
+            </div>
+            <!--Khóa ic 2-->
+            <div class='ic'>
+              <div class='icf icf3'><i class="fa fa-envelope" aria-hidden="true"></i></div>
+              <div class='icoweb'>
+                <span contenteditable='true' cvo-placeholder='email' id='cv-profile-sex'>Email:annguyen828721665@gmail.com
+                </span>
+              </div>
+            </div>
+            <!--Khóa ic 3-->
+          </div>
+        </div>
+        <!--Khóa prof-->
+        <!--button my bank card and link social-->
+        <div id="solatm">
+          <div id="social" class="social">
+            <ul>
+              <li><a class='button_share share' href='https://www.facebook.com/profile.php?id=100095379315594'><i class='fa-brands fa-facebook'></i>Facebook</a></li>
+              <li><a class='button-share share' href='https://www.tiktok.com/@anlvecode'><i class='fa-brands fa-tiktok'></i>Tiktok</a></li>
+              <!-- <li><a class='button-share share' href='#'><i class='fa-brands fa-youtube'></i>Youtube</a></li> -->
+              <li><a class='button-share share' href='https://zaloapp.com/qr/p/1glj97njsv0op?src=qr'><i class='icon-zalo'><img src="https://k-cos.vn/uploads/source/icon/zalo-icon.png" alt="img icon zalo"></i>zalo</a></li>
+              <!-- <li><a class='button-share share' href='#'><i class="fa-brands fa-telegram" aria-hidden="true"></i>Youtube</a></li> -->
+            </ul>
+          </div>
+          <div class="atm-card" id="atm-card">
+            <ul>
+              <li class="vietcombank-card">
+                <ol><img alt="Viettinbank atm" src="images/h2.jpg" style="border-radius: 10px;"></img>
+                  <big>Viettinbank</big>
+                </ol>
+                <ol>
+                  <span>
+                    <big>107877010631</big>
+                    <small>Nguyễn Văn An</small>
+                  </span>
+                  <img src="images/avt.jpg" style="border-radius: 30%;"></img>
+                </ol>
+              </li>
+            </ul>
+          </div>
+          <div class="button-btn2">
+            <button title="Lien ket xa hoi cua toi">Link Social</button>
+            <button title="The ngan hang cua toi - atm">My ATM Card</button>
+          </div>
+        </div>
+      </div>
+      <!--Khóa khung123-->
+    </div>
+    <!--Khóa container-->
+  </div>
+  <!--Khóa page888-->
+  <script>
+    /*jQuery("body").append(
+  '<div style="" id="loadingDiv"><div class="loader"></div></div>'
+);
+jQuery(window).on("load", function () {
+  setTimeout(removeLoader, 500);
+});
+
+function removeLoader() {
+  jQuery("#loadingDiv").fadeOut(500, function () {
+    jQuery("#loadingDiv").remove();
+  });
+}
+*/
+<!---click--->
+$(document).ready(function () {
+i = 0;
+i1 = 0;
+i2 = 0;
+var ic03Height = $(".ic03").innerHeight();
+var heightMyself = $(".myself").innerHeight();
+$(".myself").css({"height":+heightMyself+"px"});
+$(".ic03").css({"height":"0px"});
+    $("#custom-btn").click(function(){
+    i++;
+    if( i == 1) {
+      i = 1;
+      $("#custom-btn,.avatar,.bg-avatar,.nametext,.myself,.ic03,.container,.button-btn2").addClass("show");
+      $(".myself").css({"height":"0px"});
+      $(".ic03").css({"height":+ic03Height+"px"});
+      $(".atm-card,.social ul li").removeClass("show");
+      i1 = 0;
+      i2 = 0;
+    }
+    if (i == 2) {
+      $("#custom-btn,.avatar,.bg-avatar,.nametext,.myself,.ic03,.container,.button-btn2").removeClass("show");
+      $(".myself").css({"height":+heightMyself+"px"});
+      $(".ic03").css({"height":"0px"});
+      $(".atm-card,.social ul li").removeClass("show");
+      i = 0;
+      i1 = 0;
+      i2 = 0;
+    }                                    
+  });
+  
+  $(".button-btn2 button:nth-child(1)").click(function(){
+    i1++;
+    if (i1 == 1) {
+      i1 = 1;
+      $(".social ul li").addClass("show");
+      $(".atm-card").removeClass("show");
+      i2 = 0;
+    }
+    if (i1 == 2) {
+      $(".social ul li").removeClass("show");
+      $(".atm-card").removeClass("show");
+      i1 = 0;
+      i2 = 0;
+    }
+  });
+  
+  $(".button-btn2 button:nth-child(2)").click(function(){
+    i2++;
+    if (i2 == 1) {
+      i2 = 1;
+      $(".atm-card").addClass("show");
+      $(".social ul li").removeClass("show");
+      i1 = 0;
+    }
+    if (i2 == 2) {
+      $(".atm-card").removeClass("show");
+      $(".social ul li").removeClass("show");
+      i2 = 0;
+      i1 = 0;
+    }
+  });
+});
+  </script>
+</body>
+</html>
